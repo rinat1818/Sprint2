@@ -1,0 +1,40 @@
+body{
+    background-color: palevioletred;
+    color: antiquewhite;
+    margin: 0;
+  padding: 0;
+
+    
+}
+h1{
+    text-align: center; 
+     padding: 5px; 
+     margin: 0;
+}
+    header{
+        height: 10vh;
+       background-color: aqua;
+     margin-top: 0px;
+      margin-bottom: 5px;
+    }
+
+    
+    
+/* .Photo-area{ */
+    /* height:20vh ; */
+   
+  /* background-color: blue; */
+/* } */
+.canvas-container {
+    width: 90vw;
+    margin: 10px auto;
+    background-color: beige;
+    border: 3px solid rgb(149, 23, 122);
+}
+img{
+    height:60px;
+    
+}
+.gallery{
+    height: 100px;
+}
