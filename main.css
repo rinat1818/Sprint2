@@ -1,4 +1,8 @@
-body{
+* {
+    box-sizing: border-box;
+} 
+
+ body{
     background-color: palevioletred;
     color: antiquewhite;
     margin: 0;
@@ -11,12 +15,12 @@ h1{
      padding: 5px; 
      margin: 0;
 }
-    header{
+    /* header{
         height: 10vh;
        background-color: aqua;
      margin-top: 0px;
       margin-bottom: 5px;
-    }
+    } */
 
     
     
@@ -32,9 +36,17 @@ h1{
     border: 3px solid rgb(149, 23, 122);
 }
 img{
-    height:60px;
+    /* height:60px; */
+     /* width: 150px;
+    cursor: pointer;
+    filter: grayscale(.7); */
     
 }
 .gallery{
     height: 100px;
+}
+.gallery img{
+     width: 70px;
+    cursor: pointer;
+    /* filter: grayscale(.7); */
 }
