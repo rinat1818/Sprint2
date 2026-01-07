@@ -31,7 +31,7 @@ h1{
   /* background-color: blue; */
 /* } */
 .canvas-container {
-    display: grid;
+    /* display: grid; */
     width: 40vw;
     margin: 10px auto;
     background-color: beige;
@@ -39,7 +39,7 @@ h1{
     
 }
 canvas {
-    display: grid;
+    /* display: grid; */
     background-color: white;
     margin: 0 auto;
    /* grid-column: 1/2;
@@ -72,7 +72,7 @@ img{
     /* filter: grayscale(.7); */
 }
 .main-layout{
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 50% 40%;
     grid-template-rows:25% 25% 25% 25% ;
     /* background-color: aqua; */

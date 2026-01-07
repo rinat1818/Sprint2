@@ -20,6 +20,7 @@ var gElCanvas
 var gCtx
 
 function onInit(){
+    
  gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
@@ -107,4 +108,10 @@ function showModal(){
 var img = document.querySelector('.gallery')
 // img.classList
    img.classList.add('opacity')
+}
+
+function img2(){
+    var img = document.querySelector('.gallery')
+    img.classList.remove('opacity')
+    
 }
