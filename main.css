@@ -7,6 +7,7 @@
     color: antiquewhite;
     margin: 0;
   padding: 0;
+  text-align: center;
 
     
 }
@@ -30,10 +31,19 @@ h1{
   /* background-color: blue; */
 /* } */
 .canvas-container {
-    width: 90vw;
+    display: grid;
+    width: 40vw;
     margin: 10px auto;
     background-color: beige;
     border: 3px solid rgb(149, 23, 122);
+    
+}
+canvas {
+    display: grid;
+    background-color: white;
+    margin: 0 auto;
+   /* grid-column: 1/2;
+   grid-row: 2/5; */
 }
 img{
     /* height:60px; */
@@ -43,10 +53,30 @@ img{
     
 }
 .gallery{
-    height: 100px;
+   
+   
+    display: flex; 
+    /* grid-column: 2/3;
+    grid-row: 3/5;
+    height: 100px;  */
+   align-items: start;
+    justify-content: center;
+    gap: 10px; 
 }
 .gallery img{
-     width: 70px;
+     width: 50px;
     cursor: pointer;
+    grid-column-start:2 ;
+   grid-column-end: 3;
+
     /* filter: grayscale(.7); */
+}
+.main-layout{
+    display: grid;
+    grid-template-columns: 50% 40%;
+    grid-template-rows:25% 25% 25% 25% ;
+    /* background-color: aqua; */
+}
+.opacity{
+    opacity: 0;
 }

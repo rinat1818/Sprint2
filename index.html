@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image design</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body onload="onInit()">
-  
+
     <h1>Sticker design</h1>
-
-    
-<div class="canvas-container">
-
-    <canvas width="400" height="400">
-        <!-- <img src="imgs/lion.jpg" alt=""> -->
-    </canvas>
-</div>
-
-<div class=" gallery">
-<img onclick="renderMeme(this.src)" src="imgs/1.jpg" alt="">
-<img  onclick="renderMeme(this.src)" src="imgs/2.jpg" alt="">
-<img  onclick="renderMeme(this.src)" src="imgs/3.jpg" alt="">
-<img  onclick="renderMeme(this.src)" src="imgs/4.jpg" alt="">
-<img  onclick="renderMeme(this.src)" src="imgs/5.jpg" alt="">
-<img  onclick="renderMeme(this.src)" src="imgs/6.jpg" alt="">
-</div>
+    <div class="main-layout ">
 
 
+        <div class="gallery">
+            <img src="imgs/1.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/2.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/3.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/4.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/5.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/6.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/003.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/005.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/006.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/19.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/12.jpg" onclick="onSelectImg(this)" />
+            <img src="imgs/9.jpg" onclick="onSelectImg(this)" />
+        </div>
+        <div class="generator opacity">
+            <div class="canvas-container">
+                <canvas width="400" height="400"></canvas>
+            </div>
+            <form onsubmit="onAddTxt(event)">
+                <input class="txt-input" type="text" placeholder="write text">
+                <button>add</button>
+            </form>
 
-    <script src="js/main.js"></script>
+        </div>
+
+        <script src="js/main.js"></script>
+    </div>
+    <!-- <p>😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘</p> -->
 </body>
+
 </html>

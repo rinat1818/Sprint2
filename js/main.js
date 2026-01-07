@@ -24,26 +24,43 @@ function onInit(){
     gCtx = gElCanvas.getContext('2d')
 
  resizeCanvas()
+
+//  coverCanvasWithImg(imgggg)
+
   window.addEventListener('resize', () => resizeCanvas())
 }
 
-function renderMeme(imgggg) {
+// function renderMeme(imgggg) {
    
 
-    const img = new Image()
-    img.src = imgggg
+//     const img = new Image()
+//     img.src = imgggg
 
-    img.onload = () => {
-         gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight)
-        // gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        // drawTextOnCanvas()
-         drawText(fff(), gElCanvas.width / 2, gElCanvas.height / 2)
-    }
+//     img.onload = () => {
+//          gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight)
+        
+//          drawText(fff(), gElCanvas.width / 2, gElCanvas.height / 2)
+//         }
+
+// }
+function onSelectImg(elImg){
+    coverCanvasWithImg(elImg)
 }
+
+
+
+
+
 function coverCanvasWithImg(elImg) {
     gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        //  drawText(onAddTxt(ev), gElCanvas.width / 2, gElCanvas.height / 2)
+
+    // drawImg3() 
+    
 }
+
+
 function drawText(text, x, y) {
 	gCtx.lineWidth = 2
 	gCtx.strokeStyle = 'orange'
@@ -58,10 +75,19 @@ function drawText(text, x, y) {
 	gCtx.strokeText(text, x, y)
 }
 
-function fff(){
-    gMeme.lines[0].txt='yyyy'
-    // console.log(gMeme.lines[0].txt);
-    return  gMeme.txt='yyyy'
+// function fff(){
+//     gMeme.lines[0].txt='yyyy'
+//     // console.log(gMeme.lines[0].txt);
+//     return  gMeme.txt='yyyy'
+// }
+function onAddTxt(ev){
+    ev.preventDefault() // לא מרענן את הדף
+
+    const txt = document.querySelector('.txt-input').value
+
+    gMeme.lines[0].txt = txt   // מעדכן טקסט במים
+
+    drawText(txt, gElCanvas.width/2, gElCanvas.height/2)
 }
 
 function resizeCanvas() {
@@ -70,22 +96,15 @@ function resizeCanvas() {
     // Changing the canvas dimension clears the canvas
     gElCanvas.width = elContainer.clientWidth
 }
-
-// / function drawTextOnCanvas() {
-//     gMeme.lines.forEach((line, idx) => {
-
-//         gCtx.fillStyle = line.color
-//         gCtx.strokeStyle = 'red'
-
-//         gCtx.font = `${line.size}px impact`
-
-//         // דוגמה למיקום בסיסי: שורה עליונה ותחתונה
-//         const y = 60 + idx * 60
-
-//         gCtx.textAlign = 'center'
-
-//         gCtx.fillText(line.txt, gElCanvas.width / 2, y)
-//         gCtx.strokeText(line.txt, gElCanvas.width / 2, y)
-//     })
-// }
-// fff()
+// showModal()
+function showImg(){
+   var opct = document.querySelectorAll('.opacity')
+   console.log(opct);
+//    opct.classList
+opct[0].classList.remove('opacity')
+}
+function showModal(){
+var img = document.querySelector('.gallery')
+// img.classList
+   img.classList.add('opacity')
+}
