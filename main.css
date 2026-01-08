@@ -3,11 +3,11 @@
 }
 
 body {
-     background-color: palevioletred; 
+    background-color: palevioletred;
     color: antiquewhite;
     margin: 0;
     padding: 0;
-    text-align: center; 
+    text-align: center;
 
 
 }
@@ -16,31 +16,64 @@ h1 {
     text-align: center;
     padding: 5px;
     margin: 0;
+   color: rgb(160, 6, 127);
 }
 
 .canvas-container {
     /* grid-row: 1; */
-     width: 45vw; 
+    width: 45vw;
     margin: 10px auto;
     background-color: beige;
     border: 3px solid rgb(149, 23, 122);
     padding: 0;
-    min-width: 300px; 
+    min-width: 300px;
+}
+
+
+.txt-input::placeholder {
+    color: #fff;
+
 }
 
 .txt-input {
-     display: flex;
-    flex-wrap: wrap; 
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:10px;
+    width: 100%;
+    max-width: 230px;
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    background-color: rgb(149, 23, 122);
+    border: 3px solid rgb(238, 52, 170)
 }
 
+.pick-color {
+    /* padding: 10px 18px; */
+    border-radius: 12px;
+    background: #bb1397;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link {
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: #bb1397;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+}
 
 canvas {
     display: block;
-    /* מוריד את הרווח מתחת לקנבס */
+
     width: 100%;
-    /* הקנבס תמיד ברוחב כל הקונטיינר */
-    background-color: white;
-    margin: 0 auto;
 
     background-color: white;
     margin: 0 auto;
@@ -53,48 +86,50 @@ canvas {
     justify-content: center;
     align-items: start;
     gap: 10px;
-   
+
 }
 
 .gallery img {
 
-     width: 150px;
+    width: 150px;
     height: auto;
-    cursor: pointer; 
+    cursor: pointer;
 
 }
 
 .main-layout {
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
-     gap: 20px;
+    gap: 20px;
     width: 90vw;
-    margin: auto; 
+    margin: auto;
 
 }
-
-/* .generator { */
-    /* display: grid;
-
-    gap: 12px; */
-/* } */
 
 
 .opacity {
     opacity: 0;
-   
-    } 
+
+}
 
 
- .hidden{
+.hidden {
     display: none;
- }
+}
 
- .btns button{
-    
-    height:30px;
-    /* width: 50px;  */
-     color: gold;
+.btn-size {
+    height: 30px;
+    border-radius: 12px;
+    background: #bb1397;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btns button {
+    border-radius: 12px;
+    height: 30px;
+    color: #fff;
     background-color: rgb(153, 38, 163);
 }
 
@@ -103,13 +138,16 @@ canvas {
     height: 30px;
 }
 
+.btns {
+    border-radius: 12px;
+}
+
 /* .btn1 { */
-    /* display: grid; */
-    /* grid-row:2/3 ; */
-    /* display: flex;
+/* display: grid; */
+/* grid-row:2/3 ; */
+/* display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     align-items: center; */
 /* } */
-

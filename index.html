@@ -10,10 +10,10 @@
 
 <body onload="onInit()">
 
-    <h1>Sticker design</h1>
+    <h1>Sticker design 🎨</h1>
     <div class="main-layout ">
 
-<P></P>
+
 
         <div class="gallery"> </div>
 
@@ -23,34 +23,34 @@
                 <canvas width="400" height="400"></canvas>
             </div>
 
-            <div class="btn1 btns" >
-                <!-- <button onclick="img2();  ">gallery</button> -->
-                 <button type="button" onclick="img2()">gallery</button>
+            <div class="btn1 btns">
 
-                <input class="txt-input btns" type="text" placeholder="write text only 13 charset😘" maxlength="13"
-                    oninput="onAddTxt(this.value)">
-                   
-                <input  type="color" class="pick-color" onchange="onChangColor(this.value)">
-                <select name="" class="btns" onchange="onChangSize(this.value)">
+                <button type="button" onclick="onGallery()">gallery 🖼️</button>
+
+
+                <input type="color" class="pick-color" onchange="onChangColor(this.value)">
+                <select name="" class="btn-size" onchange="onChangSize(this.value)">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    
+
                 </select>
-                
-                <button class="btns" type="button" onclick="moveTextUp()">UP</button>
-                <button class=" btns" type="button" onclick="moveTextDown()">DOWN</button>
-                <a href="#" onclick="downloadCanvas(this)" download="file-name">Download</a>
+
+                <button class="btns" type="button" onclick="moveTextUp()">UP ⬆️</button>
+                <button class=" btns" type="button" onclick="moveTextDown()">DOWN⬇️</button>
+                <a href="#" class="link" onclick="downloadCanvas(this)" download="file-name">Download</a>
+                <input class="txt-input btns" type="text" placeholder="You can only write 13 charset😘" maxlength="13"
+                    oninput="onAddTxt(this.value)">
             </div>
-            <!-- </div> -->
+
 
         </div>
 
     </div>
-    
+    <script src="js/servus.js"></script>
     <script src="js/main1.js"></script>
-    <!-- <p>😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘</p> -->
+
 </body>
 
 </html>
