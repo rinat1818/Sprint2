@@ -1,82 +1,115 @@
 * {
     box-sizing: border-box;
-} 
+}
 
- body{
-    background-color: palevioletred;
+body {
+     background-color: palevioletred; 
     color: antiquewhite;
     margin: 0;
-  padding: 0;
-  text-align: center;
-
-    
-}
-h1{
+    padding: 0;
     text-align: center; 
-     padding: 5px; 
-     margin: 0;
-}
-    /* header{
-        height: 10vh;
-       background-color: aqua;
-     margin-top: 0px;
-      margin-bottom: 5px;
-    } */
 
-    
-    
-/* .Photo-area{ */
-    /* height:20vh ; */
-   
-  /* background-color: blue; */
-/* } */
+
+}
+
+h1 {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+
 .canvas-container {
-    /* display: grid; */
-    width: 40vw;
+    /* grid-row: 1; */
+     width: 45vw; 
     margin: 10px auto;
     background-color: beige;
     border: 3px solid rgb(149, 23, 122);
-    
+    padding: 0;
+    min-width: 300px; 
 }
+
+.txt-input {
+     display: flex;
+    flex-wrap: wrap; 
+}
+
+
 canvas {
-    /* display: grid; */
+    display: block;
+    /* מוריד את הרווח מתחת לקנבס */
+    width: 100%;
+    /* הקנבס תמיד ברוחב כל הקונטיינר */
     background-color: white;
     margin: 0 auto;
-   /* grid-column: 1/2;
-   grid-row: 2/5; */
-}
-img{
-    /* height:60px; */
-     /* width: 150px;
-    cursor: pointer;
-    filter: grayscale(.7); */
-    
-}
-.gallery{
-   
-   
-    display: flex; 
-    /* grid-column: 2/3;
-    grid-row: 3/5;
-    height: 100px;  */
-   align-items: start;
-    justify-content: center;
-    gap: 10px; 
-}
-.gallery img{
-     width: 50px;
-    cursor: pointer;
-    grid-column-start:2 ;
-   grid-column-end: 3;
 
-    /* filter: grayscale(.7); */
+    background-color: white;
+    margin: 0 auto;
+
 }
-.main-layout{
-    /* display: grid; */
-    grid-template-columns: 50% 40%;
-    grid-template-rows:25% 25% 25% 25% ;
-    /* background-color: aqua; */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+   
 }
-.opacity{
+
+.gallery img {
+
+     width: 150px;
+    height: auto;
+    cursor: pointer; 
+
+}
+
+.main-layout {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+     gap: 20px;
+    width: 90vw;
+    margin: auto; 
+
+}
+
+/* .generator { */
+    /* display: grid;
+
+    gap: 12px; */
+/* } */
+
+
+.opacity {
     opacity: 0;
+   
+    } 
+
+
+ .hidden{
+    display: none;
+ }
+
+ .btns button{
+    
+    height:30px;
+    /* width: 50px;  */
+     color: gold;
+    background-color: rgb(153, 38, 163);
 }
+
+
+.btns-color {
+    height: 30px;
+}
+
+/* .btn1 { */
+    /* display: grid; */
+    /* grid-row:2/3 ; */
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center; */
+/* } */
+

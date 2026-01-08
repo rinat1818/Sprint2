@@ -1,3 +1,5 @@
+console.log('dddd');
+
 'use strict'
 
 
@@ -18,6 +20,9 @@ var gImgs = [
     { id: 14, url: 'imgs/14.jpg', keywords: ['funny', 'cat'] },
     { id: 15, url: 'imgs/15.jpg', keywords: ['funny', 'cat'] },
     { id: 19, url: 'imgs/19.jpg', keywords: ['funny', 'cat'] }]
+
+
+
 var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
@@ -26,22 +31,20 @@ var gMeme = {
             txt: 'hhhh',
             size: 1,
             color: 'black'
-        }
-    ]
+        }]
 }
 
 let gTextPos = { x: 0, y: 0 }
 const STEP = 12
-
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+
+
 var gElCanvas
 var gCtx
 
-function onInit() {
-
+function onInit(){
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-
     resizeCanvas()
 
     window.addEventListener('resize', () => resizeCanvas())
@@ -50,24 +53,18 @@ function onInit() {
 }
 function onChangColor(color) {
     gMeme.lines[0].color = color
-    renderCanvas()
-
 }
 function onChangSize(size) {
     gMeme.lines[0].size = size
-renderCanvas()
 }
 
 // function onSelectImg(elImg) {
 //     coverCanvasWithImg(elImg)
 // }
-
 function coverCanvasWithImg(elImg) {
     gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-
 }
-
 function drawText(text, x, y) {
     gCtx.beginPath()
     // gCtx.lineWidth = 2
@@ -76,11 +73,9 @@ function drawText(text, x, y) {
     gCtx.strokeStyle = gMeme.lines[0].color;
 
     gCtx.fillStyle = gMeme.lines[0].color;
-
     gCtx.font = '45px Arial'
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
-
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
@@ -88,115 +83,88 @@ function drawText(text, x, y) {
 let gSelectedImg
 
 function onSelectImg(elImg) {
-    //  var opct= document.querySelector('.opacity')
-    //  opct.classList.remove('opacity')
-    // const elGen = document.querySelector('.generator')
-    // elGen.style.display ='block'
-    // const el = document.querySelector('.gallery') // או כל אלמנט שצריך להופיע
-    // el.classList.remove('hidden')
-//     document.querySelectorAll('.opacity')
-//   .forEach(el => el.classList.remove('opacity'))
+// var opct= document.querySelector('.opacity')
+//  opct.classList.remove('opacity') 
+//  const elGen = document.querySelector('.generator') 
+//  elGen.style.display ='block' 
+//  const el = document.querySelector('.gallery') 
+// el.classList.remove('hidden') 
+ hideGallery()
+//    coverCanvasWithImg(elImg)
+   gSelectedImg = elImg 
+//  ; hideGallery()// 
+//  ; hideGallery()
+//  document.querySelectorAll('.opacity') 
+//  ; hideGallery()// .forEach(el => el.classList.remove('opacity'))
 
-
+console.log(elImg);
 
 // document.querySelector('.generator').classList.remove('hidden')
-//   document.querySelector('.gallery').classList.add('hidden')
+// document.querySelector('.gallery').classList.add('hidden')
 
-//     gSelectedImg = elImg
-//     coverCanvasWithImg(elImg)
 
-//     gTextPos.x = gElCanvas.width / 2
-//     gTextPos.y = gElCanvas.height / 2
-    
-//     renderCanvas()
+// document.querySelector('.gallery').classList.add('hidden')
+ coverCanvasWithImg(elImg)
 
- const elGen = document.querySelector('.generator')
-  const elGal = document.querySelector('.gallery')
-  if (!elGen || !elGal) return
 
-  elGen.classList.remove('hidden')
-  elGal.classList.add('hidden')
-
-  gSelectedImg = elImg
-  coverCanvasWithImg(elImg)
-
-  gTextPos.x = gElCanvas.width / 2
-  gTextPos.y = gElCanvas.height / 2
-
-  renderCanvas()
-
+gTextPos.x = gElCanvas.width / 2 
+gTextPos.y = gElCanvas.height / 2
+renderCanvas()
 }
-
 function onAddTxt(txt) {
-
-
-
     if (txt.length > 13) return
-
     gMeme.lines[0].txt = txt
     renderCanvas()
-    // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-
-    // // מצייר מחדש את התמונה
-    // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-    // if (gSelectedImg) coverCanvasWithImg(gSelectedImg)
-    // drawText(txt, gElCanvas.width / 2, gElCanvas.height / 2)
+    // gCtx.clearRect(0, 0, gElCanvas.width,gElCanvas.height)
+    // gCtx.clearRect(0, 0, gElCanvas.width,gElCanvas.height)
+    //  // if (gSelectedImg) coverCanvasWithImg(gSelectedImg)
+    //  // drawText(txt, gElCanvas.width / 2, gElCanvas.height / 2)
 }
 
+
+
 function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.clientWidth
+const elContainer = document.querySelector('.canvas-container')
+gElCanvas.width = elContainer.clientWidth
 }
 
 function img2() {
-    // const elGallery = document.querySelector('.gallery')
-    // elGallery.classList.remove('hidden')
+const elGallery = document.querySelector('.gallery')
+elGallery.classList.remove('hidden')
+var opct = document.querySelectorAll('.generator')
 
-
-    // var opct = document.querySelectorAll('.generator')
-   
-    // opct[0].classList.add('opacity')
-
-// const elGenerator = document.querySelector('.generator')
-//   elGenerator.classList.add('hidden')
-document.querySelector('.gallery').classList.remove('hidden')
-  document.querySelector('.generator').classList.add('hidden')
-clearText()
+opct[0].classList.add('opacity')
+clearText() 
 }
 function clearText() {
-  // מנקה את הטקסט במודל
-  gMeme.lines[0].txt = ''
 
-  // מנקה את שדה הקלט
-  const elInput = document.querySelector('.txt-input')
-  if (elInput) elInput.value = ''
-
-  // מנקה את הקנבס
-//   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+    gMeme.lines[0].txt = ''
+    const elInput = document.querySelector('.txt-input')
+    if (elInput) elInput.value = ''
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
-
 function hideGallery() {
-    // const elGallery = document.querySe.lector('.gallery')
-    // elGallery.classList.add('hidden').
-
-    // const elCanvas = document.querySelector('canvas')
-    // elCanvas.classList.remove('opacity')
-    // var opct = document.querySel.ectorAll('.opacity')
-    // console.log(opct);
-    //    opct.classList
+    // const elGallery = document.querySelector('.gallery')
+    // elGallery.classList.add('hidden')
+   // const elCanvas = document.querySelector('canvas')..... 
+    // elCanvas.classList.remove('opacity')//////
+    // var opct = document.querySelectorAll('.opacity')
     // opct[0].classList.remove('opacity')
-    document.querySelector('.gallery').classList.add('hidden')
-  document.querySelector('.generator').classList.remove('hidden')
-}
 
+
+    const elGallery = document.querySelector('.gallery')
+  elGallery.classList.add('hidden')
+
+  const opct = document.querySelector('.opacity')
+  if (!opct) return
+  opct.classList.remove('opacity')
+}
 
 function renderCanvas() {
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
     if (gSelectedImg) coverCanvasWithImg(gSelectedImg)
-
-    const txt = gMeme.lines[0].txt
+        const txt = gMeme.lines[0].txt
     if (!txt) return
-
     drawText(txt, gTextPos.x, gTextPos.y)
 }
 
@@ -205,37 +173,28 @@ function moveTextUp() {
     gTextPos.y -= STEP
     renderCanvas()
 }
-
 function moveTextDown() {
     if (gTextPos.y + STEP > gElCanvas.height) return
     gTextPos.y += STEP
     renderCanvas()
 }
-
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
     elGallery.innerHTML = ''
-
-    // gImgs.forEach(img => {
-    //     elGallery.innerHTML +=
-    //         `<img src="${img.url}" onclick="onSelectImg(this); hideGallery()">`
+    // gImgs.forEach(img => { elGallery.innerHTML += 
+    // <img src="${img.url}"
+    //  onclick="onSelectImg(this); hideGallery()"></img>
     // })
-     gImgs.forEach(img => {
-    elGallery.innerHTML += `<img src="${img.url}" onclick="onSelectImg(this)">`
-  })
-}
-function downloadCanvas(elLink) {
-    
-    elLink.download = 'my-img' // Set a name for the downloaded file
+gImgs.forEach(img => {
+elGallery.innerHTML +=
+`<img src =${img.url}
 
-    const dataUrl = gElCanvas.toDataURL()
+onclick="onSelectImg(this); hideGallery()"/>`
+})
+}
+
+function downloadCanvas(elLink) {
+    elLink.download = 'my-img' // Set a name for the downloaded file
+    const dataUrl = gElCanvas.toDataURL() 
     elLink.href = dataUrl
 }
-// function hideElement() {
-//     const el = document.querySelector('.opacity')
-//     el.style.display = 'none'
-// }
-// function hideElement1() {
-//     const el = document.querySelector('.opacity')
-//     el.style.display = 'none'
-// }

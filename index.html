@@ -12,36 +12,44 @@
 
     <h1>Sticker design</h1>
     <div class="main-layout ">
-<button onclick="img2();  ">gallery</button>
- 
 
-        <div  class="gallery">
-            <img src="imgs/2.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/3.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/4.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/5.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/6.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/003.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/1.jpg"  onclick="onSelectImg(this); showImg(); showModal()  " />
-            <img src="imgs/005.jpg" onclick="onSelectImg(this);showImg(); showModal()  "/>
-            <img src="imgs/006.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/19.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/12.jpg" onclick="onSelectImg(this)" />
-            <img src="imgs/9.jpg" onclick="onSelectImg(this)" />
-        </div>
+
+
+        <div class="gallery"> </div>
+
         <div class="generator opacity">
+
             <div class="canvas-container">
                 <canvas width="400" height="400"></canvas>
             </div>
-            <form onsubmit="onAddTxt(event)">
-                <input class="txt-input" type="text" placeholder="write text">
-                <button>add</button>
-            </form>
+
+            <div class="btn1 btns" >
+                <!-- <button onclick="img2();  ">gallery</button> -->
+                 <button type="button" onclick="img2()">gallery</button>
+
+                <input class="txt-input btns" type="text" placeholder="write text only 13 charset😘" maxlength="13"
+                    oninput="onAddTxt(this.value)">
+                   
+                <input  type="color" class="pick-color" onchange="onChangColor(this.value)">
+                <select name="" class="btns" onchange="onChangSize(this.value)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    
+                </select>
+                
+                <button class="btns" type="button" onclick="moveTextUp()">UP</button>
+                <button class=" btns" type="button" onclick="moveTextDown()">DOWN</button>
+                <a href="#" onclick="downloadCanvas(this)" download="file-name">Download</a>
+            </div>
+            <!-- </div> -->
 
         </div>
 
-        <script src="js/main.js"></script>
     </div>
+    
+    <script src="js/main1.js"></script>
     <!-- <p>😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘😘</p> -->
 </body>
 
