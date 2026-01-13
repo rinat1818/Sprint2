@@ -59,7 +59,7 @@ function onSelectImg(elImg) {
 
     gTextPos.x = gElCanvas.width / 2
     gTextPos.y = gElCanvas.height / 2
-    hideGallery()
+    // hideGallery()
     renderCanvas()
 }
 
@@ -69,12 +69,12 @@ function onAddTxt(txt) {
     renderCanvas()
 }
 
-function onGallery() {
+function onShowGallery() {
     const elGallery = document.querySelector('.gallery')
     elGallery.classList.remove('hidden')
-    var opct = document.querySelectorAll('.generator')
+    var generator = document.querySelector('.generator')
 
-    opct[0].classList.add('opacity')
+    generator.classList.add('hidden')
     clearText()
     renderCanvas()
 }

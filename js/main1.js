@@ -8,6 +8,7 @@ function onInit() {
     window.addEventListener('resize', () => resizeCanvas())
     renderGallery()
     clearText()
+    onShowGallery()
 }
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
@@ -17,7 +18,7 @@ function renderGallery() {
         elGallery.innerHTML +=
             `<img src =${img.url}
             
-            onclick="onSelectImg(this);"/>`
+            onclick="onSelectImg(this)"/>`
 
     })
 }
@@ -62,9 +63,9 @@ function hideGallery() {
     const elGallery = document.querySelector('.gallery')
     elGallery.classList.add('hidden')
 
-    const opct = document.querySelector('.opacity')
-    if (!opct) return
-    opct.classList.remove('opacity')
+    const generator = document.querySelector('.generator')
+    if (!generator) return
+    generator.classList.remove('hidden')
 
 }
 

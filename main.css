@@ -18,7 +18,15 @@ h1 {
     margin: 0;
    color: rgb(160, 6, 127);
 }
-
+/* .generator{
+    display: block;
+} */
+ .generator{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 טורים */
+  grid-template-rows: repeat(3, auto);   /* 3 שורות */
+  gap: 20px; /* רווחים – אופציונלי */
+ }
 .canvas-container {
     /* grid-row: 1; */
     width: 45vw;
@@ -26,6 +34,7 @@ h1 {
     background-color: beige;
     border: 3px solid rgb(149, 23, 122);
     padding: 0;
+    max-width: 400px;
     min-width: 300px;
 }
 
@@ -74,6 +83,7 @@ canvas {
     display: block;
 
     width: 100%;
+    /* max-width: 300px; */
 
     background-color: white;
     margin: 0 auto;
@@ -141,13 +151,10 @@ canvas {
 .btns {
     border-radius: 12px;
 }
-
-/* .btn1 { */
-/* display: grid; */
-/* grid-row:2/3 ; */
-/* display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center; */
+/* .btn1{ */
+    /* display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px; */
 /* } */
+/* .btn1 { */
