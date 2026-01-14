@@ -23,11 +23,14 @@
                 <canvas width="400" height="400"></canvas>
             </div>
 
-            <div class="btn1 btns">
+            <!-- <div class="btn1 btns"> -->
 
-                <button type="button" onclick="onShowGallery()">gallery 🖼️</button>
+                <div class="btn1">
+                <input class="txt-input btns" type="text" placeholder="You can only write 13 charset😘" maxlength="13"
+                    oninput="onAddTxt(this.value)">
+                    </div>
 
-
+            <div class="btn2">
                 <input type="color" class="pick-color" onchange="onChangColor(this.value)">
                 <select name="" class="btn-size" onchange="onChangSize(this.value)">
                     <option value="1">1</option>
@@ -39,10 +42,12 @@
 
                 <button class="btns" type="button" onclick="moveTextUp()">UP ⬆️</button>
                 <button class=" btns" type="button" onclick="moveTextDown()">DOWN⬇️</button>
-                <a href="#" class="link" onclick="downloadCanvas(this)" download="file-name">Download</a>
-                <input class="txt-input btns" type="text" placeholder="You can only write 13 charset😘" maxlength="13"
-                    oninput="onAddTxt(this.value)">
             </div>
+            <div class="btn3">
+                <button type="button" onclick="onShowGallery()">gallery 🖼️</button>
+                <a href="#" class="link" onclick="downloadCanvas(this)" download="file-name">Download</a>
+            </div>
+            <!-- </div> -->
 
 
         </div>
