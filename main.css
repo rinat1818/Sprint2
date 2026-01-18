@@ -1,10 +1,16 @@
 * {
     box-sizing: border-box;
 }
+:root {
+  --color1: rgb(238, 52, 170) ;
+  --color2:rgb(160, 6, 127); ;
+  --color3:rgb(255, 255, 255); ;
+ 
+}
 
 body {
     background-color: palevioletred;
-    color: antiquewhite;
+    color: var(--color3);
     margin: 0;
     padding: 0;
     text-align: center;
@@ -16,7 +22,7 @@ h1 {
     text-align: center;
     padding: 5px;
     margin: 0;
-    color: rgb(160, 6, 127);
+    color:var(--color2);
 
 }
 
@@ -25,48 +31,50 @@ img {
     display: block;
 }
 
-.generator {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 טורים */
-    /* grid-template-rows: repeat(3, auto);   3 שורות */
-    grid-template-rows: 1fr 60px 1fr;
-    gap: 20px;
-    /* רווחים – אופציונלי */
-}
 
 .canvas-container {
     /* grid-row: 1; */
+    /* display: grid; */
     grid-column: 1/2;
     grid-row: 1/4;
     width: 45vw;
     /* margin: 10px auto; */
-    background-color: beige;
-    border: 3px solid rgb(149, 23, 122);
+    background-color: var(--color3);
+    border: 3px solid var(--color2);
     padding: 0;
     max-width: 400px;
     min-width: 300px;
+     margin: 0 auto;
+    /* grid-area: canvas; */
 }
+
 
 .btn1 {
     grid-column: 2/3;
     grid-row: 1/2;
+   
+    /* grid-area: btn1; */
+
 }
 
 .btn2 {
     grid-column: 2/3;
     grid-row: 2/3;
+    /* grid-area: btn2; */
 }
 
 .btn3 {
     grid-column: 2/3;
     grid-row: 3/4;
+    /* grid-area: btn3; */
 }
 
 
 .txt-input::placeholder {
-    color: #fff;
-
+    /* color: #b72020; */
+    color: var(--color1);
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-size: 15px; */
 }
 
 .txt-input {
@@ -80,16 +88,28 @@ img {
     max-width: 230px;
     padding: 10px 14px;
     border-radius: 12px;
+/* color: #bb1397; */
+    background-color: var(--color3);
+    border: 3px solid var(--color1);
+}
 
-    background-color: rgb(149, 23, 122);
-    border: 3px solid rgb(238, 52, 170)
+.generator {
+    display: grid;
+    grid-template-columns:2fr 1fr;
+    /* 2 טורים */
+    /* grid-template-rows: repeat(3, auto);   3 שורות */
+    grid-template-rows: 1fr 60px 1fr;
+    gap: 20px;
+    /* רווחים – אופציונלי */
 }
 
 .pick-color {
     /* padding: 10px 18px; */
     border-radius: 12px;
-    background: #bb1397;
-    color: #fff;
+    background:var(--color1);
+    /* color: #fff; */
+    border: 3px solid var(--color2);
+    
     text-decoration: none;
     cursor: pointer;
 }
@@ -97,23 +117,25 @@ img {
 .link {
     padding: 10px 18px;
     border-radius: 12px;
-    background: #bb1397;
-    color: #fff;
+    background:var(--color1) ;
+    border: 3px solid var(--color2);
+    color:var(--color3);
     text-decoration: none;
     cursor: pointer;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 canvas {
     display: block;
-
+    
     width: 100%;
     /* max-width: 300px; */
-
-
+    
+    
     background-color: white;
     margin: 0 auto;
-
+    
 }
 
 .gallery {
@@ -122,15 +144,15 @@ canvas {
     justify-content: center;
     align-items: start;
     gap: 10px;
-
+    
 }
 
 .gallery img {
-
+    
     width: 150px;
     height: auto;
     cursor: pointer;
-
+    
 }
 
 .gallery>img {
@@ -149,13 +171,13 @@ canvas {
     gap: 20px;
     width: 90vw;
     margin: auto;
-
+    
 }
 
 
 .opacity {
     opacity: 0;
-
+    
 }
 
 
@@ -166,25 +188,67 @@ canvas {
 .btn-size {
     height: 30px;
     border-radius: 12px;
-    background: #bb1397;
+    background:var(--color1);
     color: #fff;
+    border: 3px solid var(--color2);
     text-decoration: none;
     cursor: pointer;
 }
+.btns1{
+    border: 3px solid var(--color2);
+    background:var(--color1);
+   
+    color:var(--color3);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
 
-.btns button {
+/* .btns button {
     border-radius: 12px;
     height: 30px;
     color: #fff;
     background-color: rgb(153, 38, 163);
-}
+} */
 
 
-.btns-color {
+/* .btns-color {
     height: 30px;
-}
+    background-color: aquamarine;
+} */
 
 .btns {
-    border-radius: 12px;
+    /* border-radius: 12px; */
 }
 
+@media (max-width:530Px) {
+    .generator {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 60px 60px 60px;
+
+
+    }
+
+    .canvas-container {
+        grid-column: 1/2;
+    grid-row: 1/2;
+    }
+    .btn1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    /* grid-area: btn1; */
+
+}
+
+.btn2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    /* grid-area: btn2; */
+}
+
+.btn3 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    /* grid-area: btn3; */
+}
+
+}
