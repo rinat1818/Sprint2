@@ -12,10 +12,17 @@
 
     <h1>Sticker design 🎨</h1>
     <div class="main-layout ">
+        <div class="filter-container">
+            <input type="text" placeholder="Image search" oninput="onFilter(this.value)">
+        </div>
+        <div class="gallery">
 
-
-
-        <div class="gallery"> </div>
+            <!-- <div class="-filter-container">
+                <input type="text"  placeholder="Image search"
+                oninput="onFilter(this.value)">
+    
+            </div> -->
+        </div>
 
         <div class="generator ">
 
@@ -25,13 +32,13 @@
 
             <!-- <div class="btn1 btns"> -->
 
-                <div class="btn1">
+            <div class="btn1">
                 <input class="txt-input btns" type="text" placeholder="You can only write 13 charset😘" maxlength="13"
                     oninput="onAddTxt(this.value)">
-                    </div>
+            </div>
 
             <div class="btn2 ">
-                <input   type="color" class="pick-color " onchange="onChangColor(this.value)">
+                <input type="color" class="pick-color " onchange="onChangColor(this.value)">
                 <select name="" class="btn-size" onchange="onChangSize(this.value)">
                     <option value="1">1</option>
                     <option value="2">2</option>

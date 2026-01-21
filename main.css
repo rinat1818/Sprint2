@@ -203,6 +203,9 @@ canvas {
    
 }
 
+.filter-container{
+    margin-bottom: 10px;
+}
 /* .btns button {
     border-radius: 12px;
     height: 30px;
@@ -216,9 +219,9 @@ canvas {
     background-color: aquamarine;
 } */
 
-.btns {
+/* .btns { */
     /* border-radius: 12px; */
-}
+/* } */
 
 @media (max-width:530Px) {
     .generator {

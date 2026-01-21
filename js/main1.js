@@ -6,15 +6,15 @@ function onInit() {
     resizeCanvas()
 
     window.addEventListener('resize', () => resizeCanvas())
-    renderGallery()
+    renderGallery(gImgs)
     clearText()
     onShowGallery()
 }
-function renderGallery() {
+function renderGallery(imgs) {
     const elGallery = document.querySelector('.gallery')
     elGallery.innerHTML = ''
 
-    gImgs.forEach(img => {
+    imgs.forEach(img => {
         elGallery.innerHTML +=
             `<img src =${img.url}
             
@@ -61,6 +61,8 @@ function clearText() {
 function hideGallery() {
 
     const elGallery = document.querySelector('.gallery')
+    const elFilter = document.querySelector('.filter-container')
+    elFilter.classList.add('hidden')
     elGallery.classList.add('hidden')
 
     const generator = document.querySelector('.generator')
